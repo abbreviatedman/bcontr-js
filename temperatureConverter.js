@@ -6,6 +6,7 @@
 // const answer = convertTemperature(cleanInput);
 // console.log(answer);
 
+// removes spaces from anywhere in the string
 function removeSpaces(userInput) {
   return userInput.trim()
 }
