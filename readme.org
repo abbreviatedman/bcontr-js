@@ -1,0 +1,5 @@
+* bcutr JS
+
+Browser Console Unit Test Runner, pronounced "Be cuter".
+
+Until I can come up with a better name.
