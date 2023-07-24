@@ -195,4 +195,52 @@ testRunner.runTest(
 
 testRunner.prepFunction("convertTemperature")
 
+testRunner.runTest(
+  "convertTemperature can convert a Celsius to a Fahrenheit, test 1",
+  "convertTemperature('30C')",
+  86,
+)
+
+testRunner.runTest(
+  "convertTemperature can convert a Celsius to a Fahrenheit, test 2",
+  "convertTemperature('-10C')",
+  -13
+)
+
+testRunner.runTest(
+  "convertTemperature can convert a Fahrenheit to a Celsius, test 1",
+  "convertTemperature('95F')",
+  35
+)
+
+testRunner.runTest(
+  "convertTemperature can convert a Fahrenheit to a Celsius, test 2",
+  "convertTemperature('212F')",
+  100
+)
+
+testRunner.runTest(
+  "convertTemperature calls getDegrees",
+  "convertTemperature.toString().includes('getDegrees')",
+  true,
+)
+
+testRunner.runTest(
+  "convertTemperature calls getMeasurement",
+  "convertTemperature.toString().includes('getMeasurement')",
+  true,
+)
+
+testRunner.runTest(
+  "convertTemperature calls convertCToF",
+  "convertTemperature.toString().includes('convertCToF')",
+  true,
+)
+
+testRunner.runTest(
+  "convertTemperature calls convertFToC",
+  "convertTemperature.toString().includes('convertFToC')",
+  true,
+)
+
 testRunner.endTests();
