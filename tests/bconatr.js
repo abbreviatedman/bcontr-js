@@ -1,4 +1,4 @@
-const bcontr = () => ({
+const bconatr = () => ({
   _passingTests: 0,
   _failingTests: 0,
   _curentGroupName: null,
@@ -13,15 +13,15 @@ const bcontr = () => ({
   runTest(testName, invocationString, expectedValue) {
     const actualValue = eval(invocationString);
     if (actualValue === expectedValue) {
-      console.log(`%c✅ ${testName}\n\n`, this._styles.passingTests);
+      console.log(`%c✅ ${testName}`, this._styles.passingTests);
       this._passingTests++;
       this._currentPassingTests++;
     } else {
-      console.log(`%c🚨 ${testName}\n\n`, this._styles.failingTests);
+      console.log(`%c🚨 ${testName}`, this._styles.failingTests);
       console.log(
         `Called: \`${invocationString}\`
 Expected: \`${expectedValue}\`,
-Got: \`${actualValue}\`\n\n`
+Got: \`${actualValue}\``
       );
 
       this._failingTests++;
@@ -38,7 +38,7 @@ Got: \`${actualValue}\`\n\n`
       );
 
       console.log(
-        `%c${this._currentFailingTests} tests failing\n\n`,
+        `%c${this._currentFailingTests} tests failing`,
         this._styles.failingTests
       );
     }
@@ -52,25 +52,26 @@ Got: \`${actualValue}\`\n\n`
   endTests() {
     console.groupEnd();
     console.log(
-      `%c\n\n${this._passingTests} tests passing\n`,
-      this._styles.passingTests
-    );
-
-    console.log(
-      `%c${this._failingTests} tests failing\n\n`,
-      this._styles.failingTests
-    );
-
-    console.log(
       `%c${this._currentPassingTests} tests passing`,
       this._styles.passingTests
     );
 
     console.log(
-      `%c${this._currentFailingTests} tests failing\n\n`,
+      `%c${this._currentFailingTests} tests failing\n`,
       this._styles.failingTests
     );
 
-    console.log(`%c🎉 Tests end here.\n\n`, this._styles.testHeaders);
+    console.log("%c🎉 Full test breakdown:", this._styles.testHeaders);
+    console.log(
+      `%c${this._passingTests} tests passing`,
+      this._styles.passingTests
+    );
+
+    console.log(
+      `%c${this._failingTests} tests failing\n`,
+      this._styles.failingTests
+    );
+
+    console.log("%c🎉 Tests end here.", this._styles.testHeaders);
   },
 });

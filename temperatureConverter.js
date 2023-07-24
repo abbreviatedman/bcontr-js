@@ -8,7 +8,7 @@
 
 // removes spaces from anywhere in the string
 function removeSpaces(userInput) {
-  return userInput.replaceAll(" ", "");
+  return userInput.trim()
 }
 
 function getMeasurement(userInput) {
@@ -16,6 +16,6 @@ function getMeasurement(userInput) {
 }
 
 function getDegrees(userInput) {
-  return Number(userInput.slice(0, -1));
+  return Number(userInput.slice(0, 2));
 }
 

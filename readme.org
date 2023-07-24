@@ -1,5 +1,5 @@
-* BCONTR JS
+* BCONATR JS
 
-Browser CONsole Test Runner, or BCONTR. Pronounced Baconator.
+Browser CONsole Assignment Test Runner, or BCONATR. Pronounced Baconator.
 
 Until we can come up with a better name.

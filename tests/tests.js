@@ -1,4 +1,4 @@
-const testRunner = bcontr();
+const testRunner = bconatr();
 
 testRunner.printTestHeader("removeSpaces");
 
@@ -90,31 +90,48 @@ testRunner.runTest(
 
 testRunner.printTestHeader("getDegrees");
 
-// getDegrees should convert the string to a number
-console.assert(
-  typeof getDegrees("30C") === "number" &&
-    typeof getDegrees("40F") === "number",
-  "getDegrees should convert the string to a number"
+testRunner.runTest(
+  "getDegrees should convert the string to a number, test 1",
+  'typeof getDegrees("30C")',
+  "number"
 );
 
-console.assert(
-  getDegrees("30C") === 30 && getDegrees("50F") === 50,
-  "getDegrees should return the number of degrees"
+testRunner.runTest(
+  "getDegrees should return the number of degrees, test 1",
+  'getDegrees("30C")',
+  30
 );
 
-// getDegrees should handle single digit numbers
-console.assert(
-  getDegrees("3C") === 3 && getDegrees("5F") === 5,
-  "getDegrees should handle single digit numbers"
+testRunner.runTest(
+  "getDegrees should return the number of degrees, test 2",
+  'getDegrees("50F")',
+  50
 );
 
-// getDegrees should handle triple digit numbers
-console.assert(
-  getDegrees("300C") === 300 && getDegrees("500F") === 500,
-  "getDegrees should handle triple digit numbers"
+testRunner.runTest(
+  "getDegrees should handle single digit numbers, test 1",
+  'getDegrees("3C")',
+  3
 );
 
-// getDegrees should handle negative numbers
+testRunner.runTest(
+  "getDegrees should handle single digit numbers, test 2",
+  'getDegrees("5F")',
+  5
+);
+
+testRunner.runTest(
+  "getDegrees should handle triple digit numbers, test 1",
+  'getDegrees("300C")',
+  300
+);
+
+testRunner.runTest(
+  "getDegrees should handle triple digit numbers, test 2",
+  'getDegrees("500F")',
+  500
+);
+
 testRunner.runTest(
   "getDegrees should handle negative numbers, test 1",
   'getDegrees("-30F")',
