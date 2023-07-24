@@ -1,5 +1,5 @@
-* bcutr JS
+* BCONTR JS
 
-Browser Console Unit Test Runner, pronounced "Be cuter".
+Browser CONsole Test Runner, or BCONTR. Pronounced Baconator.
 
-Until I can come up with a better name.
+Until we can come up with a better name.

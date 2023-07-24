@@ -1,4 +1,4 @@
-const bcutr = () => ({
+const bcontr = () => ({
   _passingTests: 0,
   _failingTests: 0,
   _curentGroupName: null,
