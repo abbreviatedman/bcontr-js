@@ -1,6 +1,15 @@
 const testRunner = bconatr();
 
-testRunner.printTestHeader("removeSpaces");
+// testRunner.functionsToTest.add(
+//   removeSpaces,
+//   getDegrees,
+//   getMeasurement,
+//   convertCToF,
+//   convertFToC,
+//   convertTemperature,
+// )
+
+testRunner.prepFunction("removeSpaces");
 
 testRunner.runTest(
   "removeSpaces should remove any spaces from the start of the string, test 1",
@@ -38,7 +47,7 @@ testRunner.runTest(
   "AnnieCannons"
 );
 
-testRunner.printTestHeader("getMeasurement");
+testRunner.prepFunction("getMeasurement");
 
 testRunner.runTest(
   "getMeasurement should return the measurement type, test 1",
@@ -88,7 +97,7 @@ testRunner.runTest(
   "F"
 );
 
-testRunner.printTestHeader("getDegrees");
+testRunner.prepFunction("getDegrees");
 
 testRunner.runTest(
   "getDegrees should convert the string to a number, test 1",
@@ -144,6 +153,46 @@ testRunner.runTest(
   -10
 );
 
-testRunner.printTestHeader("convertCtoF")
+testRunner.prepFunction("convertCToF")
+
+testRunner.runTest(
+  "convertCToF should convert degrees to Fahrenheit, test 1",
+  "convertCToF(20)",
+  68
+)
+
+testRunner.runTest(
+  "convertCToF should convert degrees to Fahrenheit, test 2",
+  "convertCToF(15)",
+  59
+)
+
+testRunner.runTest(
+  "convertCToF should convert freezing points",
+  "convertCToF(0)",
+  32
+)
+
+testRunner.prepFunction("convertFToC")
+
+testRunner.runTest(
+  "convertFToC should convert degrees to Celsius, test 1",
+  "convertFToC(77)",
+  25
+)
+
+testRunner.runTest(
+  "convertFToC should convert degrees to Celsius, test 2",
+  "convertFToC(14)",
+  -10
+)
+
+testRunner.runTest(
+  "convertFToC should convert freezing points",
+  "convertFToC(32)",
+  0
+)
+
+testRunner.prepFunction("convertTemperature")
 
 testRunner.endTests();
