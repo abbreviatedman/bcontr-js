@@ -1,5 +1,3 @@
-* BCONATR JS
+* Temp Converter
 
-Browser CONsole Assignment Test Runner, or BCONATR. Pronounced Baconator.
-
-Until we can come up with a better name.
+A string manipulation project.
