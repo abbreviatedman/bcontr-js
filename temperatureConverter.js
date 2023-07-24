@@ -6,9 +6,8 @@
 // const answer = convertTemperature(cleanInput);
 // console.log(answer);
 
-// removes spaces from anywhere in the string
 function removeSpaces(userInput) {
-  return userInput.trim()
+  return userInput.replaceAll(" ", "");
 }
 
 function getMeasurement(userInput) {
@@ -16,6 +15,13 @@ function getMeasurement(userInput) {
 }
 
 function getDegrees(userInput) {
-  return Number(userInput.slice(0, 2));
+  return Number(userInput.slice(0, -1));
 }
 
+function convertCToF(degreesC) {
+  return degreesC / 5 * 9 + 32;
+}
+
+function convertFToC(degreesF) {
+  return (degreesF - 32) / 9 * 5;
+}

@@ -10,6 +10,33 @@ const bconatr = () => ({
     failingTests: "color: red; font-weight: bold; font-size: 1.2em;",
   },
 
+  prepFunction(functionName) {
+    if (window[functionName] === undefined) {
+      window[functionName] = function() {};
+    }
+
+    console.groupEnd();
+    if (this._currentGroupName) {
+      console.log(
+        `%c${this._currentPassingTests} tests passing`,
+        this._styles.passingTests
+      );
+
+      console.log(
+        `%c${this._currentFailingTests} tests failing`,
+        this._styles.failingTests
+      );
+    }
+
+
+    console.groupCollapsed(functionName);
+    this._currentGroupName = functionName;
+    this._currentPassingTests = 0;
+    this._currentFailingTests = 0;
+
+
+  },
+
   runTest(testName, invocationString, expectedValue) {
     const actualValue = eval(invocationString);
     if (actualValue === expectedValue) {
@@ -27,26 +54,6 @@ Got: \`${actualValue}\``
       this._failingTests++;
       this._currentFailingTests++;
     }
-  },
-
-  printTestHeader(testName) {
-    console.groupEnd();
-    if (this._currentGroupName) {
-      console.log(
-        `%c${this._currentPassingTests} tests passing`,
-        this._styles.passingTests
-      );
-
-      console.log(
-        `%c${this._currentFailingTests} tests failing`,
-        this._styles.failingTests
-      );
-    }
-
-    console.groupCollapsed(testName);
-    this._currentGroupName = testName;
-    this._currentPassingTests = 0;
-    this._currentFailingTests = 0;
   },
 
   endTests() {
