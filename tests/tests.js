@@ -220,6 +220,24 @@ testRunner.runTest(
 )
 
 testRunner.runTest(
+	"convertTemperature can handle lowercase letters, test 1",
+	"convertTemperature('30c')",
+	86
+);
+
+testRunner.runTest(
+	"convertTemperature can handle lowercase letters, test 2",
+	"convertTemperature('-10c')",
+	14
+);
+
+testRunner.runTest(
+	"convertTemperature can handle lowercase letters, test 3",
+	"convertTemperature('95f')",
+	35
+);
+
+testRunner.runTest(
   "convertTemperature calls getDegrees",
   "convertTemperature.toString().includes('getDegrees')",
   true,
@@ -241,6 +259,23 @@ testRunner.runTest(
   "convertTemperature calls convertFToC",
   "convertTemperature.toString().includes('convertFToC')",
   true,
+
+testRunner.runTest(
+  "convertTemperature returns a helpful error message if the input is invalid, test 1",
+  "convertTemperature('30')",
+  "Measurements must be in degrees Celsius or Fahrenheit--please try something like 32C or 100F"
+)
+
+testRunner.runTest(
+	"convertTemperature returns a helpful error message if the input is invalid, test 2",
+	"convertTemperature('30Celsius')",
+	"Measurements must be in degrees Celsius or Fahrenheit--please try something like 32C or 100F"
+)
+
+testRunner.runTest(
+	"convertTemperature returns a helpful error message if the input is invalid, test 3",
+	"convertTemperature('30x')",
+	"Measurements must be in degrees Celsius or Fahrenheit--please try something like 32C or 100F"
 )
 
 testRunner.endTests();

@@ -17,3 +17,15 @@ function convertCToF(degreesC) {
 function convertFToC(degreesF) {
   return (degreesF - 32) / 9 * 5;
 }
+
+function convertTemperature(userInput) {
+  const measurement = getMeasurement(userInput).toLowerCase();
+  const degrees = getDegrees(userInput);
+  if (measurement === "c") {
+    return convertCToF(degrees);
+  } else if (measurement === "f") {
+    return convertFToC(degrees);
+  } else {
+    return "Measurements must be in degrees Celsius or Fahrenheit--please try something like 32C or 100F";
+  }
+}
