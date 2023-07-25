@@ -3,7 +3,7 @@ function removeSpaces(userInput) {
 }
 
 function getMeasurement(userInput) {
-  return userInput[userInput.length - 1]
+  return userInput[userInput.length - 1];
 }
 
 function getDegrees(userInput) {
@@ -11,11 +11,11 @@ function getDegrees(userInput) {
 }
 
 function convertCToF(degreesC) {
-  return degreesC / 5 * 9 + 32;
+  return (degreesC / 5) * 9 + 32;
 }
 
 function convertFToC(degreesF) {
-  return (degreesF - 32) / 9 * 5;
+  return ((degreesF - 32) / 9) * 5;
 }
 
 function convertTemperature(userInput) {

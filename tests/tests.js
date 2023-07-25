@@ -153,71 +153,71 @@ testRunner.runTest(
   -10
 );
 
-testRunner.prepFunction("convertCToF")
+testRunner.prepFunction("convertCToF");
 
 testRunner.runTest(
   "convertCToF should convert degrees to Fahrenheit, test 1",
   "convertCToF(20)",
   68
-)
+);
 
 testRunner.runTest(
   "convertCToF should convert degrees to Fahrenheit, test 2",
   "convertCToF(15)",
   59
-)
+);
 
 testRunner.runTest(
   "convertCToF should convert freezing points",
   "convertCToF(0)",
   32
-)
+);
 
-testRunner.prepFunction("convertFToC")
+testRunner.prepFunction("convertFToC");
 
 testRunner.runTest(
   "convertFToC should convert degrees to Celsius, test 1",
   "convertFToC(77)",
   25
-)
+);
 
 testRunner.runTest(
   "convertFToC should convert degrees to Celsius, test 2",
   "convertFToC(14)",
   -10
-)
+);
 
 testRunner.runTest(
   "convertFToC should convert freezing points",
   "convertFToC(32)",
   0
-)
+);
 
-testRunner.prepFunction("convertTemperature")
+testRunner.prepFunction("convertTemperature");
 
 testRunner.runTest(
   "convertTemperature can convert a Celsius to a Fahrenheit, test 1",
   "convertTemperature('30C')",
-  86,
-)
+  86
+);
 
 testRunner.runTest(
   "convertTemperature can convert a Celsius to a Fahrenheit, test 2",
   "convertTemperature('-10C')",
-  -13
-)
+  14
+);
 
 testRunner.runTest(
   "convertTemperature can convert a Fahrenheit to a Celsius, test 1",
   "convertTemperature('95F')",
   35
-)
+);
 
 testRunner.runTest(
   "convertTemperature can convert a Fahrenheit to a Celsius, test 2",
   "convertTemperature('212F')",
   100
-)
+);
 
 testRunner.runTest(
 	"convertTemperature can handle lowercase letters, test 1",
@@ -240,25 +240,26 @@ testRunner.runTest(
 testRunner.runTest(
   "convertTemperature calls getDegrees",
   "convertTemperature.toString().includes('getDegrees')",
-  true,
-)
+  true
+);
 
 testRunner.runTest(
   "convertTemperature calls getMeasurement",
   "convertTemperature.toString().includes('getMeasurement')",
-  true,
-)
+  true
+);
 
 testRunner.runTest(
   "convertTemperature calls convertCToF",
   "convertTemperature.toString().includes('convertCToF')",
-  true,
-)
+  true
+);
 
 testRunner.runTest(
   "convertTemperature calls convertFToC",
   "convertTemperature.toString().includes('convertFToC')",
-  true,
+  true
+);
 
 testRunner.runTest(
   "convertTemperature returns a helpful error message if the input is invalid, test 1",
