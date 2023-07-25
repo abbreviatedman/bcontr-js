@@ -11,6 +11,6 @@ Pronounced "Baconator", written ~bconatr~ or ~bconatr.js~.
 1. unit-test-driven, to give learners fast feedback on whether their code meets requirements
 2. runnable in a browser to avoid complex terminal setups for new coders
 
-** How To Use bconatr
+** How To Use bconatr.js
 
 Coming soon!
