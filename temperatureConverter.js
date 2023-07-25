@@ -1,17 +1,9 @@
-// const userInput = prompt(
-// 	"Enter a temperature in degrees Celsius or Fahrenheit"
-// );
-
-// const cleanInput = removeSpaces(userInput);
-// const answer = convertTemperature(cleanInput);
-// console.log(answer);
-
 function removeSpaces(userInput) {
   return userInput.replaceAll(" ", "");
 }
 
 function getMeasurement(userInput) {
-  return userInput[userInput.length - 1]
+  return userInput[userInput.length - 1];
 }
 
 function getDegrees(userInput) {
@@ -19,9 +11,21 @@ function getDegrees(userInput) {
 }
 
 function convertCToF(degreesC) {
-  return degreesC / 5 * 9 + 32;
+  return (degreesC / 5) * 9 + 32;
 }
 
 function convertFToC(degreesF) {
-  return (degreesF - 32) / 9 * 5;
+  return ((degreesF - 32) / 9) * 5;
+}
+
+function convertTemperature(userInput) {
+  const measurement = getMeasurement(userInput).toLowerCase();
+  const degrees = getDegrees(userInput);
+  if (measurement === "c") {
+    return convertCToF(degrees);
+  } else if (measurement === "f") {
+    return convertFToC(degrees);
+  } else {
+    return "Measurements must be in degrees Celsius or Fahrenheit--please try something like 32C or 100F";
+  }
 }

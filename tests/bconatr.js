@@ -12,29 +12,20 @@ const bconatr = () => ({
 
   prepFunction(functionName) {
     if (window[functionName] === undefined) {
-      window[functionName] = function() {};
+      window[functionName] = function () {};
     }
 
     console.groupEnd();
-    if (this._currentGroupName) {
-      console.log(
-        `%c${this._currentPassingTests} tests passing`,
-        this._styles.passingTests
-      );
-
-      console.log(
-        `%c${this._currentFailingTests} tests failing`,
-        this._styles.failingTests
-      );
+    if (!this._currentGroupName) {
+      console.log("%c🧪 Tests start here.", this._styles.testHeaders);
+    } else {
+      this._printCurrentTestResults();
     }
-
 
     console.groupCollapsed(functionName);
     this._currentGroupName = functionName;
     this._currentPassingTests = 0;
     this._currentFailingTests = 0;
-
-
   },
 
   runTest(testName, invocationString, expectedValue) {
@@ -47,7 +38,7 @@ const bconatr = () => ({
       console.log(`%c🚨 ${testName}`, this._styles.failingTests);
       console.log(
         `Called: \`${invocationString}\`
-Expected: \`${expectedValue}\`,
+Expected: \`${expectedValue}\`
 Got: \`${actualValue}\``
       );
 
@@ -58,27 +49,40 @@ Got: \`${actualValue}\``
 
   endTests() {
     console.groupEnd();
+    this._printCurrentTestResults();
+    console.log("%c\n📋 Full test breakdown:\n", this._styles.testHeaders);
+
+    if (this._failingTests) {
+      console.log(
+        `%c${this._passingTests} tests passing`,
+        this._styles.passingTests
+      );
+
+      console.log(
+        `%c${this._failingTests} tests failing\n`,
+        this._styles.failingTests
+      );
+    } else {
+      console.log(
+        `%c\n🎉 All ${this._passingTests} tests passing!`,
+        this._styles.passingTests
+      );
+    }
+
+    console.log("%c\n🏁 Tests end here.", this._styles.testHeaders);
+  },
+
+  _printCurrentTestResults() {
     console.log(
       `%c${this._currentPassingTests} tests passing`,
       this._styles.passingTests
     );
 
-    console.log(
-      `%c${this._currentFailingTests} tests failing\n`,
-      this._styles.failingTests
-    );
-
-    console.log("%c🎉 Full test breakdown:", this._styles.testHeaders);
-    console.log(
-      `%c${this._passingTests} tests passing`,
-      this._styles.passingTests
-    );
-
-    console.log(
-      `%c${this._failingTests} tests failing\n`,
-      this._styles.failingTests
-    );
-
-    console.log("%c🎉 Tests end here.", this._styles.testHeaders);
+    if (this._currentFailingTests) {
+      console.log(
+        `%c${this._currentFailingTests} tests failing\n`,
+        this._styles.failingTests
+      );
+    }
   },
 });
