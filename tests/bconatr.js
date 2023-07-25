@@ -16,16 +16,10 @@ const bconatr = () => ({
     }
 
     console.groupEnd();
-    if (this._currentGroupName) {
-      console.log(
-        `%c${this._currentPassingTests} tests passing`,
-        this._styles.passingTests
-      );
-
-      console.log(
-        `%c${this._currentFailingTests} tests failing`,
-        this._styles.failingTests
-      );
+    if (!this._currentGroupName) {
+      console.log("%c🧪 Tests start here.", this._styles.testHeaders);
+    } else {
+      this._printCurrentTestResults();
     }
 
     console.groupCollapsed(functionName);
@@ -55,27 +49,40 @@ Got: \`${actualValue}\``
 
   endTests() {
     console.groupEnd();
+    this._printCurrentTestResults();
+    console.log("%c\n📋 Full test breakdown:\n", this._styles.testHeaders);
+
+    if (this._failingTests) {
+      console.log(
+        `%c${this._passingTests} tests passing`,
+        this._styles.passingTests
+      );
+
+      console.log(
+        `%c${this._failingTests} tests failing\n`,
+        this._styles.failingTests
+      );
+    } else {
+      console.log(
+        `%c\n🎉 All ${this._passingTests} tests passing!`,
+        this._styles.passingTests
+      );
+    }
+
+    console.log("%c\n🏁 Tests end here.", this._styles.testHeaders);
+  },
+
+  _printCurrentTestResults() {
     console.log(
       `%c${this._currentPassingTests} tests passing`,
       this._styles.passingTests
     );
 
-    console.log(
-      `%c${this._currentFailingTests} tests failing\n`,
-      this._styles.failingTests
-    );
-
-    console.log("%c🎉 Full test breakdown:", this._styles.testHeaders);
-    console.log(
-      `%c${this._passingTests} tests passing`,
-      this._styles.passingTests
-    );
-
-    console.log(
-      `%c${this._failingTests} tests failing\n`,
-      this._styles.failingTests
-    );
-
-    console.log("%c🎉 Tests end here.", this._styles.testHeaders);
+    if (this._currentFailingTests) {
+      console.log(
+        `%c${this._currentFailingTests} tests failing\n`,
+        this._styles.failingTests
+      );
+    }
   },
 });
