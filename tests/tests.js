@@ -91,7 +91,7 @@ testRunner.runTest(
 testRunner.prepFunction("getDegrees");
 
 testRunner.runTest(
-  "getDegrees should convert the string to a number, test 1",
+  "getDegrees should convert the string to a number",
   'typeof getDegrees("30C")',
   "number"
 );
