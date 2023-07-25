@@ -1,14 +1,14 @@
-const bconatr = () => ({
-  _passingTests: 0,
-  _failingTests: 0,
-  _curentGroupName: null,
-  _currentPassingTests: 0,
-  _currentFailingTests: 0,
-  _styles: {
+class Bconatr {
+  #passingTests = 0;
+  #failingTests = 0;
+  #currentGroupName = null;
+  #currentPassingTests = 0;
+  #currentFailingTests = 0;
+  #styles = {
     testHeaders: "color: blue; font-weight: bold; font-size: 1.5em;",
     passingTests: "color: green; font-size: 1.2em;",
     failingTests: "color: red; font-weight: bold; font-size: 1.2em;",
-  },
+  };
 
   prepFunction(functionName) {
     if (window[functionName] === undefined) {
@@ -16,26 +16,26 @@ const bconatr = () => ({
     }
 
     console.groupEnd();
-    if (!this._currentGroupName) {
-      console.log("%c🧪 Tests start here.", this._styles.testHeaders);
+    if (!this.#currentGroupName) {
+      console.log("%c🧪 Tests start here.", this.#styles.testHeaders);
     } else {
-      this._printCurrentTestResults();
+      this.#printCurrentTestResults();
     }
 
     console.groupCollapsed(functionName);
-    this._currentGroupName = functionName;
-    this._currentPassingTests = 0;
-    this._currentFailingTests = 0;
-  },
+    this.#currentGroupName = functionName;
+    this.#currentPassingTests = 0;
+    this.#currentFailingTests = 0;
+  }
 
   runTest(testDescription, evaluationString, expectedValue) {
     const actualValue = eval(evaluationString);
     if (actualValue === expectedValue) {
-      console.log(`%c✅ pass: ${testDescription}`, this._styles.passingTests);
-      this._passingTests++;
-      this._currentPassingTests++;
+      console.log(`%c✅ pass: ${testDescription}`, this.#styles.passingTests);
+      this.#passingTests++;
+      this.#currentPassingTests++;
     } else {
-      console.log(`%c🚨 FAIL: ${testDescription}`, this._styles.failingTests);
+      console.log(`%c🚨 FAIL: ${testDescription}`, this.#styles.failingTests);
       console.log(
         `RAN: \`${evaluationString}\`
 WANTED BACK: ${
@@ -50,47 +50,47 @@ GOT: ${
         }`
       );
 
-      this._failingTests++;
-      this._currentFailingTests++;
+      this.#failingTests++;
+      this.#currentFailingTests++;
     }
-  },
+  }
 
   endTests() {
     console.groupEnd();
-    this._printCurrentTestResults();
-    console.log("%c\n📋 Full test breakdown:\n", this._styles.testHeaders);
+    this.#printCurrentTestResults();
+    console.log("%c\n📋 Full test breakdown:\n", this.#styles.testHeaders);
 
-    if (this._failingTests) {
+    if (this.#failingTests) {
       console.log(
-        `✅ %c${this._passingTests} tests passing`,
-        this._styles.passingTests
+        `✅ %c${this.#passingTests} tests passing`,
+        this.#styles.passingTests
       );
 
       console.log(
-        `🚨 %c${this._failingTests} TESTS FAILING\n`,
-        this._styles.failingTests
+        `🚨 %c${this.#failingTests} TESTS FAILING\n`,
+        this.#styles.failingTests
       );
     } else {
       console.log(
-        `%c\n🎉 All ${this._passingTests} tests passing!`,
-        this._styles.passingTests
+        `%c\n🎉 All ${this.#passingTests} tests passing!`,
+        this.#styles.passingTests
       );
     }
 
-    console.log("%c\n🏁 Tests end here.", this._styles.testHeaders);
-  },
+    console.log("%c\n🏁 Tests end here.", this.#styles.testHeaders);
+  }
 
-  _printCurrentTestResults() {
+  #printCurrentTestResults() {
     console.log(
-      `%c✅ ${this._currentPassingTests} tests passing`,
-      this._styles.passingTests
+      `%c✅ ${this.#currentPassingTests} tests passing`,
+      this.#styles.passingTests
     );
 
-    if (this._currentFailingTests) {
+    if (this.#currentFailingTests) {
       console.log(
-        `%c🚨 ${this._currentFailingTests} TESTS FAILING\n`,
-        this._styles.failingTests
+        `%c🚨 ${this.#currentFailingTests} TESTS FAILING\n`,
+        this.#styles.failingTests
       );
     }
-  },
-});
+  }
+};

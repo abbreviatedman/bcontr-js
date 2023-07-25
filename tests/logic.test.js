@@ -1,4 +1,4 @@
-const testRunner = bconatr();
+const testRunner = new Bconatr();
 
 testRunner.prepFunction("removeSpaces");
 
