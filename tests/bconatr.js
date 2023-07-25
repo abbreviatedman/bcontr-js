@@ -6,7 +6,7 @@ const bconatr = () => ({
   _currentFailingTests: 0,
   _styles: {
     testHeaders: "color: blue; font-weight: bold; font-size: 1.5em;",
-    passingTests: "color: green; font-weight: bold; font-size: 1.2em;",
+    passingTests: "color: green; font-size: 1.2em;",
     failingTests: "color: red; font-weight: bold; font-size: 1.2em;",
   },
 
@@ -31,11 +31,11 @@ const bconatr = () => ({
   runTest(testDescription, evaluationString, expectedValue) {
     const actualValue = eval(evaluationString);
     if (actualValue === expectedValue) {
-      console.log(`%c✅ ${testDescription}`, this._styles.passingTests);
+      console.log(`%c✅ pass: ${testDescription}`, this._styles.passingTests);
       this._passingTests++;
       this._currentPassingTests++;
     } else {
-      console.log(`%c🚨 ${testDescription}`, this._styles.failingTests);
+      console.log(`%c🚨 FAIL: ${testDescription}`, this._styles.failingTests);
       console.log(
         `RAN: \`${evaluationString}\`
 WANTED BACK: ${
@@ -62,12 +62,12 @@ GOT: ${
 
     if (this._failingTests) {
       console.log(
-        `%c${this._passingTests} tests passing`,
+        `✅ %c${this._passingTests} tests passing`,
         this._styles.passingTests
       );
 
       console.log(
-        `%c${this._failingTests} tests failing\n`,
+        `🚨 %c${this._failingTests} TESTS FAILING\n`,
         this._styles.failingTests
       );
     } else {
@@ -82,13 +82,13 @@ GOT: ${
 
   _printCurrentTestResults() {
     console.log(
-      `%c${this._currentPassingTests} tests passing`,
+      `%c✅ ${this._currentPassingTests} tests passing`,
       this._styles.passingTests
     );
 
     if (this._currentFailingTests) {
       console.log(
-        `%c${this._currentFailingTests} tests failing\n`,
+        `%c🚨 ${this._currentFailingTests} TESTS FAILING\n`,
         this._styles.failingTests
       );
     }
