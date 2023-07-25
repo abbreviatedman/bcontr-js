@@ -12,7 +12,7 @@ const bconatr = () => ({
 
   prepFunction(functionName) {
     if (window[functionName] === undefined) {
-      window[functionName] = function() {};
+      window[functionName] = function () {};
     }
 
     console.groupEnd();
@@ -28,13 +28,10 @@ const bconatr = () => ({
       );
     }
 
-
     console.groupCollapsed(functionName);
     this._currentGroupName = functionName;
     this._currentPassingTests = 0;
     this._currentFailingTests = 0;
-
-
   },
 
   runTest(testName, invocationString, expectedValue) {
@@ -47,7 +44,7 @@ const bconatr = () => ({
       console.log(`%c🚨 ${testName}`, this._styles.failingTests);
       console.log(
         `Called: \`${invocationString}\`
-Expected: \`${expectedValue}\`,
+Expected: \`${expectedValue}\`
 Got: \`${actualValue}\``
       );
 
