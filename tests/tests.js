@@ -1,14 +1,5 @@
 const testRunner = bconatr();
 
-// testRunner.functionsToTest.add(
-//   removeSpaces,
-//   getDegrees,
-//   getMeasurement,
-//   convertCToF,
-//   convertFToC,
-//   convertTemperature,
-// )
-
 testRunner.prepFunction("removeSpaces");
 
 testRunner.runTest(
