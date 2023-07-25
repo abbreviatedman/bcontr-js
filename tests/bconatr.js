@@ -28,18 +28,26 @@ const bconatr = () => ({
     this._currentFailingTests = 0;
   },
 
-  runTest(testName, invocationString, expectedValue) {
-    const actualValue = eval(invocationString);
+  runTest(testDescription, evaluationString, expectedValue) {
+    const actualValue = eval(evaluationString);
     if (actualValue === expectedValue) {
-      console.log(`%c✅ ${testName}`, this._styles.passingTests);
+      console.log(`%c✅ ${testDescription}`, this._styles.passingTests);
       this._passingTests++;
       this._currentPassingTests++;
     } else {
-      console.log(`%c🚨 ${testName}`, this._styles.failingTests);
+      console.log(`%c🚨 ${testDescription}`, this._styles.failingTests);
       console.log(
-        `Called: \`${invocationString}\`
-Expected: \`${expectedValue}\`
-Got: \`${actualValue}\``
+        `RAN: \`${evaluationString}\`
+WANTED BACK: ${
+          typeof expectedValue === "string"
+            ? `"${expectedValue}"`
+            : `\`${expectedValue}\``
+        }
+GOT: ${
+          typeof actualValue === "string"
+            ? `"${actualValue}"`
+            : `\`${actualValue}\``
+        }`
       );
 
       this._failingTests++;
