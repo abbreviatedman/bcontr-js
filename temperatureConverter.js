@@ -1,11 +1,3 @@
-// const userInput = prompt(
-// 	"Enter a temperature in degrees Celsius or Fahrenheit"
-// );
-
-// const cleanInput = removeSpaces(userInput);
-// const answer = convertTemperature(cleanInput);
-// console.log(answer);
-
 function removeSpaces(userInput) {
   return userInput.replaceAll(" ", "");
 }
