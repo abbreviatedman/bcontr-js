@@ -1,5 +1,16 @@
-* BCONATR JS
+* bconatr.js
 
-Browser CONsole Assignment Test Runner, or BCONATR. Pronounced "Baconator".
+Browser CONsole Assignment Test Runner, or BCONATR.
 
-Until we can come up with a better name.
+Pronounced "Baconator", written ~bconatr~ or ~bconatr.js~.
+
+** Introduction
+
+~bconatr.js~ is a very small library for use by code educators to allow them to write a specific kind of assignment, one that is:
+
+1. unit-test-driven, to give learners fast feedback on whether their code meets requirements
+2. runnable in a browser to avoid complex terminal setups for new coders
+
+** How To Use bconatr
+
+Coming soon!
