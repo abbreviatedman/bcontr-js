@@ -3,5 +3,5 @@ const userInput = prompt(
 );
 
 const cleanInput = removeSpaces(userInput);
-const answer = convertTemperature(cleanInput);
+const answer = convertTemp(cleanInput);
 console.log(`${cleanInput} converted is:\n\n${answer} degrees.`);

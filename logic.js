@@ -18,7 +18,7 @@ function convertFToC(degreesF) {
   return ((degreesF - 32) / 9) * 5;
 }
 
-function convertTemperature(userInput) {
+function convertTemp(userInput) {
   const measurement = getMeasurement(userInput).toLowerCase();
   const degrees = getDegrees(userInput);
   if (measurement === "c") {
