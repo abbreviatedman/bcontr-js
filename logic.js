@@ -22,9 +22,9 @@ function convertTemp(userInput) {
   const measurement = getMeasurement(userInput).toLowerCase();
   const degrees = getDegrees(userInput);
   if (measurement === "c") {
-    return convertCToF(degrees);
+    return convertCToF(degrees).toFixed(1) + "F"
   } else if (measurement === "f") {
-    return convertFToC(degrees);
+    return convertFToC(degrees).toFixed(1) + "C"
   } else {
     return "Measurements must be in degrees Celsius or Fahrenheit--please try something like 32C or 100F";
   }
