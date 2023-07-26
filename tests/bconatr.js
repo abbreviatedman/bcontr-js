@@ -1,41 +1,54 @@
 class Bconatr {
   #passingTests = 0;
   #failingTests = 0;
-  #currentGroupName = null;
   #currentPassingTests = 0;
   #currentFailingTests = 0;
   #styles = {
-    testHeaders: "color: blue; font-weight: bold; font-size: 1.5em;",
-    passingTests: "color: green; font-size: 1.2em;",
-    failingTests: "color: red; font-weight: bold; font-size: 1.2em;",
+    header: "color: blue; font-weight: bold; font-size: 1.5em;",
+    passing: "color: green; font-size: 1.2em;",
+    failing: "color: red; font-weight: bold; font-size: 1.2em;",
   };
 
-  prepFunction(functionName) {
-    if (window[functionName] === undefined) {
-      window[functionName] = function () {};
-    }
-
+  runTests(functions) {
     console.groupEnd();
-    if (!this.#currentGroupName) {
-      console.log("%c🧪 Tests start here.", this.#styles.testHeaders);
+    this.#printHeader("🧪 Tests start here.");
+    Object.keys(functions).forEach((func) =>
+      this.#testFunction(functions, func)
+    );
+
+    this.#printHeader("\n📋 Full test breakdown:\n");
+    if (this.#failingTests) {
+      this.#printPassMessage(`✅ ${this.#passingTests} tests passing`);
+      this.#printFailMessage(`🚨 ${this.#failingTests} TESTS FAILING\n`);
     } else {
-      this.#printCurrentTestResults();
+      this.#printPassMessage(`\n🎉 All ${this.#passingTests} tests passing!`);
     }
 
-    console.groupCollapsed(functionName);
-    this.#currentGroupName = functionName;
-    this.#currentPassingTests = 0;
-    this.#currentFailingTests = 0;
+    this.#printHeader("\n🏁 Tests end here.");
   }
 
-  runTest(testDescription, evaluationString, expectedValue) {
+  #testFunction(functions, func) {
+    if (window[func] === undefined) {
+      window[func] = function () {};
+    }
+
+    console.groupCollapsed(func);
+    this.#currentPassingTests = 0;
+    this.#currentFailingTests = 0;
+    const tests = functions[func];
+    tests.forEach((test) => this.#runTest(test));
+    console.groupEnd();
+    this.#printCurrentTestResults();
+  }
+
+  #runTest({ testDescription, evaluationString, expectedValue }) {
     const actualValue = eval(evaluationString);
     if (actualValue === expectedValue) {
-      console.log(`%c✅ pass: ${testDescription}`, this.#styles.passingTests);
+      this.#printPassMessage(`✅ pass: ${testDescription}`);
       this.#passingTests++;
       this.#currentPassingTests++;
     } else {
-      console.log(`%c🚨 FAIL: ${testDescription}`, this.#styles.failingTests);
+      this.#printFailMessage(`🚨 FAIL: ${testDescription}`);
       console.log(
         `RAN: \`${evaluationString}\`
 WANTED BACK: ${
@@ -55,42 +68,22 @@ GOT: ${
     }
   }
 
-  endTests() {
-    console.groupEnd();
-    this.#printCurrentTestResults();
-    console.log("%c\n📋 Full test breakdown:\n", this.#styles.testHeaders);
-
-    if (this.#failingTests) {
-      console.log(
-        `✅ %c${this.#passingTests} tests passing`,
-        this.#styles.passingTests
-      );
-
-      console.log(
-        `🚨 %c${this.#failingTests} TESTS FAILING\n`,
-        this.#styles.failingTests
-      );
-    } else {
-      console.log(
-        `%c\n🎉 All ${this.#passingTests} tests passing!`,
-        this.#styles.passingTests
-      );
-    }
-
-    console.log("%c\n🏁 Tests end here.", this.#styles.testHeaders);
-  }
-
   #printCurrentTestResults() {
-    console.log(
-      `%c✅ ${this.#currentPassingTests} tests passing`,
-      this.#styles.passingTests
-    );
-
+    this.#printPassMessage(`✅ ${this.#currentPassingTests} tests passing`);
     if (this.#currentFailingTests) {
-      console.log(
-        `%c🚨 ${this.#currentFailingTests} TESTS FAILING\n`,
-        this.#styles.failingTests
-      );
+      this.#printFailMessage(`🚨 ${this.#currentFailingTests} TESTS FAILING\n`);
     }
   }
-};
+
+  #printHeader(message) {
+    console.log(`%c${message}`, this.#styles.header);
+  }
+
+  #printPassMessage(message) {
+    console.log(`%c${message}`, this.#styles.passing);
+  }
+
+  #printFailMessage(message) {
+    console.log(`%c${message}`, this.#styles.failing);
+  }
+}
