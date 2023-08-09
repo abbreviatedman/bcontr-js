@@ -11,6 +11,22 @@ Pronounced "Baconator", written ~bconatr~ or ~bconatr.js~.
 1. unit-test-driven, to give learners fast feedback on whether their code meets requirements
 2. runnable in a browser to avoid complex terminal setups for new coders
 
-** How To Use bconatr.js
+** Usage
 
-Coming soon!
+This section will be expanded once the API has settled down.
+
+*** Basic Setup
+
+**** Include This Library
+
+Include the following tag in the ~<head>~ tag of your HTML file:
+
+#+begin_src html
+  <script src="https://cdn.jsdelivr.net/gh/abbreviatedman/bconatr-js/index.js"></script>
+#+end_src
+
+**** Write Tests
+
+Write tests in a separate JavaScript file. Load that file /after/ ~bconatr.js~.
+
+See the [[https://github.com/abbreviatedman/example-bconatr-js-assignment][example assignment]] to see an example of how to load it in, as well as what these tests could look like.
