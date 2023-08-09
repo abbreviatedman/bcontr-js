@@ -9,11 +9,11 @@ class Bconatr {
     failing: "color: red; font-weight: bold; font-size: 1.2em;",
   };
 
-  runTests(functions) {
+  runTests(testSuites) {
     console.groupEnd();
     this.#printHeader("🧪 Tests start here.");
-    Object.keys(functions).forEach((func) =>
-      this.#testFunction(functions, func)
+    Object.keys(testSuites).forEach((testSuiteName) =>
+      this.#runTestSuite(testSuites, testSuiteName)
     );
 
     this.#printHeader("\n📋 Full test breakdown:\n");
@@ -27,15 +27,15 @@ class Bconatr {
     this.#printHeader("\n🏁 Tests end here.");
   }
 
-  #testFunction(functions, func) {
-    if (window[func] === undefined) {
-      window[func] = function () {};
+  #runTestSuite(testSuites, testSuiteName) {
+    if (window[testSuiteName] === undefined) {
+      window[testSuiteName] = function () {};
     }
 
-    console.groupCollapsed(func);
+    console.groupCollapsed(testSuiteName);
     this.#currentPassingTests = 0;
     this.#currentFailingTests = 0;
-    const tests = functions[func];
+    const { tests } = testSuites[testSuiteName];
     tests.forEach((test) => this.#runTest(test));
     console.groupEnd();
     this.#printCurrentTestResults();
