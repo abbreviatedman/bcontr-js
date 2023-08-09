@@ -26,7 +26,7 @@ This section will be expanded once the API has settled down.
 Include the following tag in the ~<head>~ tag of your HTML file:
 
 #+begin_src html
-  <script src="https://cdn.jsdelivr.net/gh/abbreviatedman/bconatr-js/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/abbreviatedman/bconatr-js@0.1.0/index.js"></script>
 #+end_src
 
 **** Write Tests
