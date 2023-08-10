@@ -6,10 +6,11 @@ Pronounced "Baconator", written ~bconatr~ or ~bconatr.js~.
 
 *** Introduction
 
-~bconatr.js~ is a very small library for use by code educators to allow them to write a specific kind of assignment, one that is:
+~bconatr.js~ is a very small library for use by code educators to allow them to write a specific kind of assignment, one that:
 
-1. unit-test-driven, to give learners fast feedback on whether their code meets requirements
-2. runnable in a browser to avoid complex terminal setups for new coders
+1. is unit-test-driven, to give learners fast feedback on whether their code meets requirements
+2. is runnable in a browser to avoid complex terminal setups for new coders
+3. welcomes learners with easy-to-parse test failures
 
 *** Current Status
 
