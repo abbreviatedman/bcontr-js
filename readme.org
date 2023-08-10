@@ -50,6 +50,6 @@ If you'd like to contribute:
 2. Let us know in this discussion that you'd like to contribute to the issue.
 3. If approved, work in your fork of the repository.
 4. Once your draft is complete, open a pull request to the ~development~ branch.
-5. There may be some discussion before the pull request is merged—if it needs revision, discussion will happen in the pull request comments.
-6. Once it is merged into the ~development~ branch, it should soon make its way into a new release via the ~main~ branch.
-7. Party at my place.
+5. Take part in the discussion before the pull request is merged—if your contribution needs feedback and revision, that discussion will happen in the pull request comments.
+6. Be patient—once your contribution is merged into the ~development~ branch, it should soon make its way into a new release via the ~main~ branch.
+7. Once your contribution is part of the project: celebrate! Well done.
