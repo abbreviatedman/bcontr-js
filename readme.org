@@ -4,7 +4,7 @@ Browser CONsole Assignment Test Runner, or BCONATR.
 
 Pronounced "Baconator", written ~bconatr~ or ~bconatr.js~.
 
-*** Introduction
+** Introduction
 
 ~bconatr.js~ is a very small library for use by code educators to allow them to write a specific kind of assignment, one that:
 
@@ -12,11 +12,11 @@ Pronounced "Baconator", written ~bconatr~ or ~bconatr.js~.
 2. is runnable in a browser to avoid complex terminal setups for new coders
 3. welcomes learners with easy-to-parse test failures
 
-*** Current Status
+** Current Status
 
 We are currently at version 0.1, so the API is still unstable. See the Usage section for where we're currently at.
 
-*** Usage
+** Usage
 
 This section will be expanded once the API has settled down.
 
@@ -36,7 +36,7 @@ Write tests in a separate JavaScript file. Load that file /after/ ~bconatr.js~.
 
 See the [[https://github.com/abbreviatedman/example-bconatr-js-assignment][example assignment]] to see an example of how to load it in, as well as what these tests could look like.
 
-*** Contributing
+** Contributing
 
 We welcome new contributors!
 
