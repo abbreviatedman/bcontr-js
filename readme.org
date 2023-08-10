@@ -4,24 +4,24 @@ Browser CONsole Assignment Test Runner, or BCONATR.
 
 Pronounced "Baconator", written ~bconatr~ or ~bconatr.js~.
 
-** Introduction
+*** Introduction
 
 ~bconatr.js~ is a very small library for use by code educators to allow them to write a specific kind of assignment, one that is:
 
 1. unit-test-driven, to give learners fast feedback on whether their code meets requirements
 2. runnable in a browser to avoid complex terminal setups for new coders
 
-** Version
+*** Version
 
 We are currently at version 0.1, so the API is still unstable. See the Usage section for where we're currently at.
 
-** Usage
+*** Usage
 
 This section will be expanded once the API has settled down.
 
-*** Basic Setup
+***** Basic Setup
 
-**** Include This Library
+******* Include This Library
 
 Include the following tag in the ~<head>~ tag of your HTML file:
 
@@ -29,8 +29,26 @@ Include the following tag in the ~<head>~ tag of your HTML file:
   <script src="https://cdn.jsdelivr.net/gh/abbreviatedman/bconatr-js@0.1.0/index.js"></script>
 #+end_src
 
-**** Write Tests
+******* Write Tests
 
 Write tests in a separate JavaScript file. Load that file /after/ ~bconatr.js~.
 
 See the [[https://github.com/abbreviatedman/example-bconatr-js-assignment][example assignment]] to see an example of how to load it in, as well as what these tests could look like.
+
+*** Contributing
+
+Your contributions are welcome! The code is currently reasonably small and easy to contribute to.
+
+If you want to contribute, please have some experience using the test runner with an assignment. The [[https://github.com/abbreviatedman/example-bconatr-js-assignment][example bconatr.js assignment]] is a helpful resource for testing the current release.
+
+~bconatr.js~ is released under the GPL license. Your contributions will be as well.
+
+If you'd like to contribute:
+
+1. Submit an issue with a feature request or potential bug so it can be discussed. This ensures your work fits a need and the project's vision.
+2. Let us know in this discussion that you'd like to contribute to the issue.
+3. If approved, work in your fork of the repository.
+4. Once your draft is complete, open a pull request to the ~development~ branch.
+5. There may be some discussion before the pull request is merged—if it needs revision, discussion will happen in the pull request comments.
+6. Once it is merged into the ~development~ branch, it should soon make its way into a new release via the ~main~ branch.
+7. Party at my place.
