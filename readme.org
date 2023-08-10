@@ -37,7 +37,7 @@ See the [[https://github.com/abbreviatedman/example-bconatr-js-assignment][examp
 
 *** Contributing
 
-Your contributions are welcome! The code is currently reasonably small and easy to contribute to.
+We welcome new contributors!
 
 If you want to contribute, please have some experience using the test runner with an assignment. The [[https://github.com/abbreviatedman/example-bconatr-js-assignment][example bconatr.js assignment]] is a helpful resource for testing the current release.
 
