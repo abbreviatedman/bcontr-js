@@ -1,4 +1,4 @@
-* bconatr.js
+* 🥓 bconatr.js 🥓
 
 Browser CONsole Assignment Test Runner, or BCONATR.
 
