@@ -11,7 +11,7 @@ class Bconatr {
 
   runTests(testSuites) {
     console.groupEnd();
-    this.#printHeader("🧪 Tests start here.");
+    this.#printHeader("🥓 Tests start here. 🥓");
     Object.keys(testSuites).forEach((testSuiteName) =>
       this.#runTestSuite(testSuites, testSuiteName)
     );
