@@ -14,7 +14,7 @@ Pronounced "Baconator", written ~bconatr~ or ~bconatr.js~.
 
 ** Current Status
 
-We are currently at version 0.1, so the API is still unstable. See the Usage section for where we're currently at.
+We are currently at version 0.2, so the API is still unstable. See the Usage section for where we're currently at.
 
 ** Usage
 
@@ -40,7 +40,7 @@ See the [[https://github.com/abbreviatedman/example-bconatr-js-assignment][examp
 
 We welcome new contributors!
 
-If you want to contribute, please have some experience using the test runner with an assignment. The [[https://github.com/abbreviatedman/example-bconatr-js-assignment][example bconatr.js assignment]] is a helpful resource for testing the current release.
+If you want to contribute, please have some experience using the test runner with an assignment. The [[https://github.com/abbreviatedman/example-bconatr-js-assignment][example bconatr.js assignment]] repo is a helpful resource for testing the current release.
 
 ~bconatr.js~ is released under the GPL license. Your contributions will be as well.
 
