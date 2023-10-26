@@ -36,6 +36,8 @@ Write tests in a separate JavaScript file. Load that file /after/ ~bconatr.js~.
 
 See the [[https://github.com/abbreviatedman/example-bconatr-js-assignment][example assignment]] to see an example of how to load it in, as well as what these tests could look like.
 
+More on this soon.
+
 ** Contributing
 
 We welcome new contributors!
