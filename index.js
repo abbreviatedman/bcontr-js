@@ -1,8 +1,19 @@
-class Bconatr {
-  #passingTests = 0;
-  #failingTests = 0;
-  #overallResults = [];
+//@ts-check
+/**@typedef {import('./suiteResult').SuiteResult} SuiteResult */
 
+class Bconatr {
+  /**@type {number}*/
+  #passingTests = 0;
+
+  /**@type {number}*/
+  #failingTests = 0;
+
+  /**@type {SuiteResult}*/
+  #overallResults
+
+  /**
+   * @param {[]} testSuites
+     */
   runTests(testSuites) {
     console.groupEnd();
     this.#printHeader("🥓 Tests start here. 🥓");
