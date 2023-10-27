@@ -38,6 +38,12 @@ See the [[https://github.com/abbreviatedman/example-bconatr-js-assignment][examp
 
 More concrete documentation coming soon™.
 
+** Roadmap
+
+Right now, we have /potential/ improvements, but none of these are set in stone.
+
+- adding TS to add better completion for test writers
+
 ** Contributing
 
 We welcome new contributors!
