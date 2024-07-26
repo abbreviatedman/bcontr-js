@@ -1,12 +1,12 @@
-* 🥓 bconatr.js 🥓
+* 🥓 bcontr.js 🥓
 
-Browser CONsole Assignment Test Runner, or BCONATR.
+Browser CONsole Test Runner, or BCONTR.
 
-Pronounced "Baconator", written ~bconatr~ or ~bconatr.js~.
+Pronounced "Baconator", written ~bcontr~ or ~bcontr.js~.
 
 ** Introduction
 
-~bconatr.js~ is a very small library for use by code educators to allow them to write a specific kind of assignment, one that:
+~bcontr.js~ is a small library for use by code educators to allow them to write a specific kind of assignment, one that:
 
 1. is unit-test-driven, to give learners fast feedback on whether their code meets requirements
 2. is runnable in a browser to avoid complex terminal setups for new coders
@@ -20,7 +20,7 @@ However, the proof of concept is there. It works and it is glorious.
 
 ** Usage
 
-This section will be expanded once the API has settled down. For now, feel free to check out the [[https://github.com/abbreviatedman/example-bconatr-js-assignment][example assignment]] to see how it can be used.
+This section will be expanded once the API has settled down. For now, feel free to check out the [[https://github.com/abbreviatedman/example-bcontr-js-assignment][example assignment]] to see how it can be used.
 
 **** Basic Setup
 
@@ -29,22 +29,22 @@ This section will be expanded once the API has settled down. For now, feel free 
 Include the following tag in the ~<head>~ tag of your HTML file:
 
 #+begin_src html
-  <script src="https://cdn.jsdelivr.net/gh/abbreviatedman/bconatr-js@0.2.0/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/abbreviatedman/bcontr-js@0.2.0/index.js"></script>
 #+end_src
 
 ****** Write Tests
 
-Write tests in a separate JavaScript file. Load that file /after/ ~bconatr.js~.
+Write tests in a separate JavaScript file. Load that file /after/ ~bcontr.js~.
 
-See the [[https://github.com/abbreviatedman/example-bconatr-js-assignment][example assignment]] to see an example of how to load it in, as well as what these tests could look like.
+See the [[https://github.com/abbreviatedman/example-bcontr-js-assignment][example assignment]] to see an example of how to load it in, as well as what these tests could look like.
 
 ** Contributing
 
 We welcome new contributors!
 
-If you want to contribute, please have some experience using the test runner with an assignment. The [[https://github.com/abbreviatedman/example-bconatr-js-assignment][example bconatr.js assignment]] repo is a helpful resource for testing the current release.
+If you want to contribute, please have some experience using the test runner with an assignment. The [[https://github.com/abbreviatedman/example-bcontr-js-assignment][example bcontr.js assignment]] repo is a helpful resource for testing the current release.
 
-~bconatr.js~ is released under the GPL v3 license. Your contributions will be as well.
+~bcontr.js~ is released under the GPL v3 license. Your contributions will be as well.
 
 If you'd like to contribute:
 
